@@ -247,7 +247,7 @@ nav a.highlight:hover {
     z-index: 1001;
 }
 
-.menu-toggle i.black {
+.menu-toggle.black i {
     color: #FFF6A2;
 }
 
@@ -448,11 +448,12 @@ nav a.highlight:hover {
     display: flex;
     /* ใช้ Flexbox เพื่อจัดเรียงเนื้อหา */
     align-items: center;
+    z-index: 0;
     /* จัดให้อยู่ตรงกลางตามแนวแกนหลัก (แนวตั้ง) */
 }
 
 #about-model {
-    width: 100%;
+    width: 100vw;
     /* ให้โมเดลขยายเต็มพื้นที่ */
     height: 100vh;
     /* กำหนดความสูงให้เต็มหน้าจอ */
@@ -460,11 +461,13 @@ nav a.highlight:hover {
     /* ให้โมเดลไม่ถูกตัด */
     position: absolute;
     /* ทำให้โมเดลอยู่ด้านหลังเนื้อหา */
-    left: -50%;
+    left: -50vw;
+    z-index: 0;
     /* เลื่อนโมเดลไปทางซ้าย */
 }
 
 .about-info {
+    z-index: 2;
     margin-left: auto;
     width: 75%;
     padding: 40px;
@@ -913,6 +916,7 @@ section {
     .experience-content {
         font-size: 0.7rem;
         max-width: 90%;
+        margin-top: 10vh;
         /* padding: 20px; */
     }
 
@@ -952,6 +956,18 @@ section {
 
     .nav-menu.active {
         display: flex;
+        background-color: #ffffff;
+        transition: background-color .3s ease-in-out;
+    }
+
+    [data-theme="dark"] .nav-menu.active {
+        background-color: #1a1a2e;
+        transition: background-color .3s ease-in-out;
+    }
+
+    .nav-menu.active.black {
+        background-color: #10101f;
+        transition: background-color .3s ease-in-out;
     }
 
     .nav-menu li {
@@ -963,4 +979,15 @@ section {
         font-size: 1.5rem;
         color: var(--nav-text);
     }
+
+    /* .gallery h1 {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        justify-content: center;
+        align-items: center;
+        margin-bottom:20vh;
+    } */
 }

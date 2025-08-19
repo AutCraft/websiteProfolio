@@ -100,6 +100,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
     const heroSection = document.querySelector('.hero');
     const aboutSection = document.querySelector('.about');
     const experienceSection = document.getElementById('experience');
@@ -137,24 +138,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.add('scrolled');
                 navbar.classList.remove('black');
                 menuToggle.classList.remove('black');
+                navMenu.classList.remove('black');
             } else if (experiencePositionTop <= offset) {
                 // ถ้าส่วน 'experience' เลื่อนขึ้นมาถึงขอบบนของ viewport (หรือเลยไปแล้ว)
                 // ให้เพิ่มคลาส 'black' และลบคลาส 'scrolled'
                 navbar.classList.add('black');
                 navbar.classList.remove('scrolled');
                 menuToggle.classList.add('black');
+                navMenu.classList.add('black');
             } else if (window.scrollY > 50) {
                 // ถ้าเลื่อนลงมาเกิน 50px แต่ยังไม่ถึงส่วน 'experience'
                 // ให้เพิ่มคลาส 'scrolled'
                 navbar.classList.add('scrolled');
                 navbar.classList.remove('black');
                 menuToggle.classList.remove('black');
+                navMenu.classList.remove('black');
             } else {
                 // ถ้าเลื่อนกลับขึ้นไปที่ด้านบนสุดของหน้า
                 // ให้ลบคลาสทั้งหมดออก
                 navbar.classList.remove('scrolled');
                 navbar.classList.remove('black');
                 menuToggle.classList.remove('black');
+                navMenu.classList.remove('black');
             }
         }
 
